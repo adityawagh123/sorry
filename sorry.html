@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sorry Dipu ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      font-family: "Segoe UI", sans-serif;
+      text-align: center;
+    }
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      max-width: 480px;
+      width: 90%;
+    }
+    h1 {
+      color: #ff3366;
+      font-size: 24px;
+      margin-bottom: 20px;
+      animation: glow 1.5s infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff6b6b; }
+      to   { text-shadow: 0 0 20px #ff1e56; }
+    }
+    button {
+      margin: 10px;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .yes {
+      background: #4CAF50;
+      color: white;
+    }
+    .no {
+      background: #f44336;
+      color: white;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1 id="question">😔 Sorry Dipu, I know I hurt you... will you forgive me?</h1>
+    <button class="yes" onclick="yesClicked()">Yes</button>
+    <button class="no" onclick="noClicked()">No</button>
+  </div>
+
+  <script>
+   const questions = [
+  "💔 I cheated once, but I promise Dippu I’ll never do it again. Will you forgive me?",
+  "😭 Dippu, without you life feels empty… will you give me one more chance?",
+  "🥺 I broke your trust… can I fix it with lifetime loyalty, my Dippu?",
+  "😢 Without you even chai feels tasteless… will you be my sugar again?",
+  "💞 I promise, ab se sirf tum meri crush, mera pyaar, mera sab kuch ho Dippu.",
+  "😂 Agar tu 'No' boli toh main tere ghar ke bahar daily sorry poster laga dunga, Dippu!",
+  "🌹 I’ll prove my love every single day, just forgive me Dippu.",
+  "🤣 Agar tu 'No' boli toh main Dippu ke liye TikTok dance karunga!",
+  "😔 I lost your trust once, but I’ll earn it back Dippu… will you trust me?",
+  "🙈 Ab se mobile wallpaper sirf tumhari photo hogi… maan jao na Dippu?",
+  "🥹 Sorry bol bol ke throat dry ho gaya… ek ‘Yes’ bol do Dippu!",
+  "💝 You’re my forever Dippu… ab cheating ki spelling bhi bhool gaya hu.",
+  "😂 Agar tu 'No' boli toh main tere liye daily chocolate courier karunga Dippu!",
+  "😭 Dippu, main pagal hu but tum bina aur bhi pagal ho jaunga… forgive me?",
+  "🌸 Tum meri last love ho, meri pehli aur meri forever wali ho, Dippu ❤️",
+  "😆 Agar tu abhi 'Yes' boli toh main tujhe daily ice cream khilane le jaunga!",
+  "🫶 Mujhe ek chance de Dippu, main loyal hero ban jaunga!",
+  "🤣 Tu na boli toh main apna hairstyle ‘Sorry Cut’ karva lunga Dippu!",
+  "❤️‍🩹 I broke your heart once, now I’ll spend my life healing it, Dippu.",
+  "😜 Agar tu ‘Yes’ boli toh main tere liye 24 ghante ka DJ night arrange kar dunga!",
+  "💔 Without you, I’m incomplete… ek smile de do na Dippu.",
+  "😂 Agar tu nahi maani toh main roadside pe banner lagwa dunga ‘Dippu forgive me!’",
+  "🥺 Every second without you feels like punishment… ab maaf bhi kar do Dippu?",
+  "🤣 Agar tu abhi bhi 'No' boli toh main chappal leke apology dance karunga!",
+  "🌹 Promise karta hu – ab se tum meri queen aur main tumhara guard hamesha.",
+  "😂 Agar tu maafi nahi di toh main tere best friend ko convince karke group sorry bolwaunga!",
+  "😭 Tum meri duniya ho, meri zindagi ho, Dippu… please forgive me.",
+  "😆 Agar tu abhi 'Yes' boli toh main daily good morning/good night Shayari likh ke bhejunga!",
+  "❤️ Dippu, galti meri thi but dil sirf tumhara hai… maan jao?",
+  "😂 Agar tu ‘No’ boli toh main tere liye roadside pe guitar bajake sorry song gaunga!",
+  "🥹 Dippu, main tumhe kabhi hurt nahi karna chahta tha… please ek chance?",
+  "🤣 Agar tu abhi bhi roothi toh main tere liye full comedy show karunga!",
+  "🌸 Dippu, tum meri pehli dua aur meri aakhri tamanna ho.",
+  "😢 Trust ek baar tod diya… ab apni jaan deke bhi wapas kamaunga.",
+  "😂 Agar tu ‘No’ boli toh main ek din ke liye tere joothe polish karunga!",
+  "💞 Dippu, tum meri life ka best part ho… please forgive me.",
+  "🤣 Agar tu abhi ‘Yes’ boli toh main daily tere liye pakode banauga!",
+  "🥺 Dippu, tum bina sab adhoora hai… kya ek baar gale lagogi?",
+  "❤️‍🔥 I’ll prove that no girl is above my Dippu… only you forever."
+];
+
+
+    let step = 0;
+
+    function yesClicked() {
+      document.querySelector(".box").innerHTML = `
+        <h1>🥹 Thank you Dipu ❤️</h1>
+        <p>I promise I’ll never cheat or hurt you again. You’re my forever. 💕</p>
+      `;
+    }
+
+    function noClicked() {
+      if (step < questions.length) {
+        document.getElementById("question").innerText = questions[step];
+        step++;
+      } else {
+        document.querySelector(".box").innerHTML = `
+          <h1>😢 I’ll keep waiting for your forgiveness, no matter how long 💔</h1>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>
